@@ -28,7 +28,9 @@ Metodo Delete para deletar
 Foi pedido também a busca por cpf, eu tentei fazer ela da seguinte forma: 
 
 Na classe repository: Optional<Usuario>  findByCPF(String cpf);
-Na classe Service:  public Usuario findByCPF(String cpf) {
+
+        
+        Na classe Service:  public Usuario findByCPF(String cpf) {
         Optional<Usuario> obj = repo.findByCPF(cpf);
         return obj.orElseThrow(() -> new ObjectNotFoundException(
                 "Objeto não encontrado! Id: " + cpf + ", Tipo: " + Usuario.class.getName()));
