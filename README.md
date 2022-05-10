@@ -27,6 +27,7 @@ Metodo Delete para deletar
 
 Foi pedido também a busca por cpf, eu tentei fazer ela da seguinte forma: 
 
+
 Na classe repository: Optional<Usuario>  findByCPF(String cpf);
 
         
@@ -36,7 +37,9 @@ Na classe repository: Optional<Usuario>  findByCPF(String cpf);
                 "Objeto não encontrado! Id: " + cpf + ", Tipo: " + Usuario.class.getName()));
     }
   
- Na classe Resource:   @RequestMapping(value="/{cpf}", method= RequestMethod.GET)
+
+        
+        Na classe Resource:   @RequestMapping(value="/{cpf}", method= RequestMethod.GET)
     public ResponseEntity<Usuario> findByCPF(@PathVariable String cpf) {
         Usuario obj = service.find(Integer.valueOf(cpf));
         return ResponseEntity.ok().body(obj);
