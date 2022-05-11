@@ -28,7 +28,12 @@ Metodo Delete para deletar
 Foi pedido também a busca por cpf, eu tentei fazer ela da seguinte forma: 
 
 
-Na classe repository: Optional<Usuario>  findByCPF(String cpf);
+
+        Na classe repository: @Repository
+        public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+        Optional<Usuario>  findByCPF(String cpf);
+        }
 
         
         Na classe Service:  public Usuario findByCPF(String cpf) {
